@@ -60,7 +60,8 @@ jobs:
                     java-version: 21
             -   name: Install dependencies
                 run: |
-                    sudo apt install python3-defusedxml
+                    sudo apt-get update
+                    sudo apt-get install -y python3-defusedxml
             -   name: Run analysis wrapper
                 env:
                     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
