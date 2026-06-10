@@ -11,10 +11,7 @@
 name: "Analysis"
 
 on:
-    pull_request:
-        branches: [ "master", "main", "stable-*" ]
-    push:
-        branches: [ "master", "main", "stable-*" ]
+    workflow_dispatch:
 
 permissions:
     pull-requests: write
@@ -26,7 +23,7 @@ concurrency:
 
 jobs:
     analysis:
-        runs-on: ubuntu-latest
+        runs-on: monkci-ubuntu-24.04-4
         steps:
             - name: Disabled on forks
               if: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name != github.repository }}

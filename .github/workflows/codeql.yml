@@ -10,12 +10,7 @@
 name: "CodeQL"
 
 on:
-  push:
-    branches: [ "master", "main", "stable-*" ]
-  pull_request:
-    branches: [ "master", "main" ]
-  schedule:
-    - cron: '24 18 * * 3'
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -23,7 +18,7 @@ permissions:
 jobs:
   analyze:
     name: Analyze
-    runs-on: ubuntu-latest
+    runs-on: monkci-ubunti-24.04-4
     permissions:
       actions: read
       contents: read

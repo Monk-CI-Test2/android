@@ -6,8 +6,6 @@ name: Lint translation files
 on:
   pull_request:
     branches: [ master, main, stable-* ]
-  push:
-    branches: [ master, main, stable-* ]
 
 permissions:
   contents: read
